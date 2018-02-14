@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ *   WWE JSON Feed module
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function wwe_json_feed_views_api() {
+  return array('api' => 3.0);
+}
+
+/**
+ * Implements hook_views_pre_build().
+ */
+function wwe_json_feed_views_pre_build(&$view) {
+  if ($view->name == 'json_feed') {
+    // arg is the argument from the url
+    $limit = filter_xss(arg(2));
+
+    $view->items_per_page = $limit;
+  }
+}

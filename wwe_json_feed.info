@@ -1,0 +1,6 @@
+name = WWE JSON Feed
+description = "This module is a web service that returns a JSON feed of content."
+version = 7.x-1.0
+core = 7.x
+package = WWE
+dependencies[] = views_datasource:views_json
